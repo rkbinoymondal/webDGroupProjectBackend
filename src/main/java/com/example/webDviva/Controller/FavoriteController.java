@@ -31,16 +31,6 @@ public class FavoriteController {
         return service.updateFavorite(food);
     }
 
-    @GetMapping("/favorites/{foodId}")
-    public Favorite getAFavorite(@PathVariable Long foodId){
-        return service.getAFavorite(foodId);
-    }
-
-    @DeleteMapping("/favorites/{foodId}")
-    public void deleteAFavorite(@PathVariable Long foodId){
-        service.deleteFavorite(foodId);
-    }
-
     @DeleteMapping("/favorites")
     public void deleteAllFavorites(){
         service.deleteFavoriteAll();
