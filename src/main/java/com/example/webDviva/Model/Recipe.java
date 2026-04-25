@@ -26,4 +26,5 @@ public class Recipe {
     private String difficulty;
     private String description;
     private Date date;
+    private String owner;
 }
