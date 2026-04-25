@@ -27,11 +27,11 @@ public class FavoriteService {
         return repo.save(food);
     }
 
-    public void deleteFavorite(String foodId){
+    public void deleteFavorite(Long foodId){
         repo.deleteById(foodId);
     }
 
-    public Favorite getAFavorite(String foodId){
+    public Favorite getAFavorite(Long foodId){
         return repo.findById(foodId).orElse(null);
     }
 
@@ -44,4 +44,6 @@ public class FavoriteService {
     }
 
     public void deleteByOwner(String owner){ repo.deleteByOwner(owner);    }
+
+    public void deleteByOwnerAndFoodId(String owner, String foodId){ repo.deleteByOwnerAndFoodId(owner,foodId);    }
 }

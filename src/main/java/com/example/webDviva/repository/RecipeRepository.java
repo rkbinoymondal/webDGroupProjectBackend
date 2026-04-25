@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
-    List<Recipe> findByOwner(String owner);
+    List<Recipe> findAllByOwner(String owner);
 
-    void deleteByOwner(String owner);
+    void deleteAllByOwner(String owner);
 }

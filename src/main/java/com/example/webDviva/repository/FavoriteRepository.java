@@ -9,9 +9,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface FavoriteRepository extends JpaRepository<Favorite, String> {
+public interface FavoriteRepository extends JpaRepository<Favorite, Long> {
 
     List<Favorite> findByOwner(String owner);
 
     void deleteByOwner(String owner);
+
+    void deleteByOwnerAndFoodId(String owner, String foodId);
 }

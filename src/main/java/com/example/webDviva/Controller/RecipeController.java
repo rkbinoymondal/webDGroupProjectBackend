@@ -43,13 +43,13 @@ public class RecipeController {
         service.deleteRecipeAll();
     }
 
-    @GetMapping("/recipes/{owner}")
+    @GetMapping("/recipes/owner/{owner}")
     public List<Recipe> getAllByOwner(@PathVariable String owner){
-        return service.getByOwner(owner);
+        return service.getAllByOwner(owner);
     }
 
-    @DeleteMapping("/recipes/{owner}")
+    @DeleteMapping("/recipes/owner/{owner}")
     public void deleteAllByOwner(@PathVariable String owner){
-        service.deleteByOwner(owner);
+        service.deleteAllByOwner(owner);
     }
 }

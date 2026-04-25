@@ -32,12 +32,12 @@ public class FavoriteController {
     }
 
     @GetMapping("/favorites/{foodId}")
-    public Favorite getAFavorite(@PathVariable String foodId){
+    public Favorite getAFavorite(@PathVariable Long foodId){
         return service.getAFavorite(foodId);
     }
 
     @DeleteMapping("/favorites/{foodId}")
-    public void deleteAFavorite(@PathVariable String foodId){
+    public void deleteAFavorite(@PathVariable Long foodId){
         service.deleteFavorite(foodId);
     }
 
@@ -46,13 +46,18 @@ public class FavoriteController {
         service.deleteFavoriteAll();
     }
 
-    @GetMapping("/favorites/{owner}")
+    @GetMapping("/favorites/owner/{owner}")
     public List<Favorite> getAllByOwner(@PathVariable String owner){
         return service.getByOwner(owner);
     }
 
-    @DeleteMapping("/favorites/{owner}")
+    @DeleteMapping("/favorites/owner/{owner}")
     public void deleteAllByOwner(@PathVariable String owner){
         service.deleteByOwner(owner);
+    }
+
+    @DeleteMapping("/favorites/owner/{owner}/foodId/{foodId}")
+    public void deleteByOwnerAndFoodId(@PathVariable String owner, @PathVariable String foodId){
+        service.deleteByOwnerAndFoodId(owner,foodId);
     }
 }
