@@ -2,6 +2,7 @@ package com.example.webDviva.Service;
 
 import com.example.webDviva.Model.Favorite;
 import com.example.webDviva.Model.Food;
+import com.example.webDviva.Model.Recipe;
 import com.example.webDviva.repository.FavoriteRepository;
 import com.example.webDviva.repository.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,4 +38,10 @@ public class FavoriteService {
     public void deleteFavoriteAll(){
         repo.deleteAll();
     }
+
+    public List<Favorite> getByOwner(String owner){
+        return repo.findByOwner(owner);
+    }
+
+    public void deleteByOwner(String owner){ repo.deleteByOwner(owner);    }
 }

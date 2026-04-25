@@ -37,4 +37,10 @@ public class RecipeService {
     public void deleteRecipeAll(){
         repo.deleteAll();
     }
+
+    public List<Recipe> getByOwner(String owner){
+        return repo.findByOwner(owner);
+    }
+
+    public void deleteByOwner(String owner){ repo.deleteByOwner(owner);    }
 }

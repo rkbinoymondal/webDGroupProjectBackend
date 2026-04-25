@@ -2,6 +2,7 @@ package com.example.webDviva.Controller;
 
 import com.example.webDviva.Model.Favorite;
 import com.example.webDviva.Model.Food;
+import com.example.webDviva.Model.Recipe;
 import com.example.webDviva.Service.FavoriteService;
 import com.example.webDviva.Service.FoodService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,15 @@ public class FavoriteController {
     @DeleteMapping("/favorites")
     public void deleteAllFavorites(){
         service.deleteFavoriteAll();
+    }
+
+    @GetMapping("/favorites/{owner}")
+    public List<Favorite> getAllByOwner(@PathVariable String owner){
+        return service.getByOwner(owner);
+    }
+
+    @DeleteMapping("/favorites/{owner}")
+    public void deleteAllByOwner(@PathVariable String owner){
+        service.deleteByOwner(owner);
     }
 }
