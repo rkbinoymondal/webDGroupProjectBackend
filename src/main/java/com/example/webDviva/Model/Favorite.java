@@ -18,4 +18,5 @@ public class Favorite {
     private String servings;
     private String imageUrl;
     private String description;
+    private String owner;
 }

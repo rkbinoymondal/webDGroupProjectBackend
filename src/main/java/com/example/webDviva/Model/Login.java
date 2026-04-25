@@ -18,5 +18,4 @@ public class Login {
     private String phone;
     private String age;
     private String state;
-    private String owner;
 }
